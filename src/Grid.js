@@ -7,7 +7,7 @@ const StyledGrid = styled.div``;
 export const Grid = props => (
   <StyledGrid {...props}>
     {props.grid.map(row => (
-      <Row row={row} />
+      <Row row={row} key={Math.random()} />
     ))}
   </StyledGrid>
 );
