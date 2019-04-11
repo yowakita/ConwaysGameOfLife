@@ -8,8 +8,11 @@ const StyledRow = styled.div`
 
 export const Row = props => (
   <StyledRow {...props}>
-    {props.row.map(cell => (
-      <Cell value={cell} />
+    {props.row.map((cell, columnIndex) => (
+      <Cell
+        value={cell}
+        onClick={() => props.handleCellClick(props.rowIndex, columnIndex)}
+      />
     ))}
   </StyledRow>
 );

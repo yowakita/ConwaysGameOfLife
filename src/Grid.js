@@ -5,9 +5,14 @@ import { Row } from "./Row";
 const StyledGrid = styled.div``;
 
 export const Grid = props => (
-  <StyledGrid {...props}>
-    {props.grid.map(row => (
-      <Row row={row} key={Math.random()} />
+  <StyledGrid>
+    {props.grid.map((row, i) => (
+      <Row
+        row={row}
+        rowIndex={i}
+        key={Math.random()}
+        handleCellClick={props.handleCellClick}
+      />
     ))}
   </StyledGrid>
 );
